@@ -3,4 +3,6 @@
     <string name="title_home">Home</string>
     <string name="title_dashboard">Skill</string>
     <string name="title_notifications">Profile</string>
+    <string name="favorite">Favorite</string>
+    <string name="ownrecipe">Own Recipe</string>
 </resources>
