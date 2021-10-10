@@ -3,9 +3,7 @@ package com.bignerdranch.android.finalproject.ui.Favorite
 import android.content.Context
 import android.os.Bundle
 import android.util.Log
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
+import android.view.*
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
@@ -18,10 +16,11 @@ import java.util.*
 
 
 private const val TAG = "FavoriteFragment"
+private const val ARG_Favorite_ID = "favorite_id"
 class FavoriteFragment : Fragment()  {
 
     interface Callbacks {
-        fun onGameSelected(gameId: UUID)
+        fun onFavoriteSelected(favoriteId: UUID)
     }
     private var callbacks: Callbacks? = null
 
@@ -64,6 +63,8 @@ class FavoriteFragment : Fragment()  {
             Observer { favoritefoods ->
                 favoritefoods?.let {
                     Log.i(TAG, "Got favorites ${favoritefoods.size}")
+                    val favoriteId: UUID = arguments?.getSerializable(ARG_Favorite_ID) as UUID
+                    favoriteViewModel.loadFavorite(favoriteId)
                     updateUI(favoritefoods)
                 }
             })
@@ -77,6 +78,23 @@ class FavoriteFragment : Fragment()  {
     override fun onDetach() {
         super.onDetach()
         callbacks = null
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
+        super.onCreateOptionsMenu(menu, inflater)
+        inflater.inflate(R.menu.fragment_favorite_list, menu)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        return when (item.itemId) {
+            R.id.new_favorite -> {
+                val favorite = FavoriteFood()
+                favoriteViewModel.addfavorite(favorite)
+                callbacks?.onFavoriteSelected(favorite.id)
+                true
+            }
+            else -> return super.onOptionsItemSelected(item)
+        }
     }
 
     private inner class FavoriteHolder(view: View) : RecyclerView.ViewHolder(view), View.OnClickListener {
@@ -97,7 +115,7 @@ class FavoriteFragment : Fragment()  {
         }
 
         override fun onClick(v: View) {
-            callbacks?.onGameSelected(favoriteFood.id)
+            callbacks?.onFavoriteSelected(favoriteFood.id)
         }
     }
 
@@ -116,5 +134,16 @@ class FavoriteFragment : Fragment()  {
         }
         //total number of views
         override fun getItemCount() = favoriteFoods.size
+    }
+
+    companion object {
+        fun newInstance(favoriteId: UUID): FavoriteFragment {
+            val args = Bundle().apply {
+                putSerializable(ARG_Favorite_ID, favoriteId)
+            }
+            return FavoriteFragment().apply {
+                arguments = args
+            }
+        }
     }
 }
