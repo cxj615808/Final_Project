@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Final Project</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Skill</string>
+    <string name="title_notifications">Profile</string>
+    <string name="favorite">Favorite</string>
+    <string name="new_favorite">New Favorite</string>
+    <string name="ownrecipe">Own Recipe</string>
+    <string name="new_ownrecipe">New OwnRecipe</string>
+
+</resources>
