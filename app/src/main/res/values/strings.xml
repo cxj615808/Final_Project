@@ -7,5 +7,6 @@
     <string name="new_favorite">New Favorite</string>
     <string name="ownrecipe">Own Recipe</string>
     <string name="new_ownrecipe">New OwnRecipe</string>
+    <string name="new_skill">New OwnRecipe</string>
 
 </resources>

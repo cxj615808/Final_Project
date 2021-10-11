@@ -49,7 +49,7 @@ class FavoriteFragment : Fragment()  {
         //the recycler view
         val view = inflater.inflate(R.layout.fragment_favorite, container, false)
         favoriteRecyclerView =
-            view.findViewById(R.id.match_recycler_view) as RecyclerView
+            view.findViewById(R.id.favorite_recycler_view) as RecyclerView
         favoriteRecyclerView.layoutManager = LinearLayoutManager(context) //Creates a vertical LinearLayoutManager
         favoriteRecyclerView.adapter = adapter //bind the adapter
         return view

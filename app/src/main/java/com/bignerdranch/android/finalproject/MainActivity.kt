@@ -10,6 +10,7 @@ import androidx.navigation.ui.setupWithNavController
 import com.bignerdranch.android.finalproject.databinding.ActivityMainBinding
 import com.bignerdranch.android.finalproject.ui.Favorite.FavoriteRepository
 import com.bignerdranch.android.finalproject.ui.OwnRecipe.OwnRecipeRepository
+import com.bignerdranch.android.finalproject.ui.OwnRecipe.SkillRepository
 
 class MainActivity : AppCompatActivity() {
 
@@ -17,6 +18,9 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        val skillRepository = SkillRepository.get()
+        var skill = Skill(skillname = "11111")
+        skillRepository.addSkill(skill)
 
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)

@@ -31,10 +31,6 @@ class OwnRecipeFragment : Fragment()   {
         ViewModelProviders.of(this).get(OwnRecipeViewModel::class.java)
     }
 
-    override fun onAttach(context: Context) {
-        super.onAttach(context)
-        callbacks = context as Callbacks?
-    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -49,7 +45,7 @@ class OwnRecipeFragment : Fragment()   {
         //the recycler view
         val view = inflater.inflate(R.layout.fragment_ownrecipe, container, false)
         ownRecyclerView =
-            view.findViewById(R.id.match_recycler_view) as RecyclerView
+            view.findViewById(R.id.ownrecipe_recycler_view) as RecyclerView
         ownRecyclerView.layoutManager = LinearLayoutManager(context) //Creates a vertical LinearLayoutManager
         ownRecyclerView.adapter = adapter //bind the adapter
         return view
@@ -75,10 +71,6 @@ class OwnRecipeFragment : Fragment()   {
         ownRecyclerView.adapter = adapter
     }
 
-    override fun onDetach() {
-        super.onDetach()
-        callbacks = null
-    }
 
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
         super.onCreateOptionsMenu(menu, inflater)

@@ -14,7 +14,7 @@ class OwnRecipeViewModel : ViewModel()  {
         ownRepository.addOwn(ownFood)
     }
 
-    fun loadOwn(favoriteId: UUID) {
-        ownIdLiveData.value = favoriteId
+    fun loadOwn(ownId: UUID) {
+        ownIdLiveData.value = ownId
     }
 }

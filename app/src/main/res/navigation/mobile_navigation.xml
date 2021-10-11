@@ -13,13 +13,13 @@
 
     <fragment
             android:id="@+id/navigation_dashboard"
-            android:name="com.bignerdranch.android.finalproject.ui.Skill.DashboardFragment"
+            android:name="com.bignerdranch.android.finalproject.ui.Skill.SkillFragment"
             android:label="@string/title_dashboard"
             tools:layout="@layout/fragment_skill"/>
 
     <fragment
             android:id="@+id/navigation_notifications"
-            android:name="com.bignerdranch.android.finalproject.ui.Profile.NotificationsFragment"
+            android:name="com.bignerdranch.android.finalproject.ui.Profile.ProfileFragment"
             android:label="@string/title_notifications"
             tools:layout="@layout/fragment_profile"/>
 </navigation>
