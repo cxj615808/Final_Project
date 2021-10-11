@@ -9,7 +9,7 @@ import java.util.*
 import java.util.concurrent.Executors
 
 
-private const val DATABASE_NAME = "food-database"
+private const val DATABASE_NAME = "favorite-database"
 
 class FavoriteRepository private constructor(context: Context){
     private val database : FavoriteDatabase = Room.databaseBuilder(

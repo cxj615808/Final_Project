@@ -30,7 +30,7 @@ class DashboardFragment : Fragment() {
         _binding = FragmentSkillBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
-        val textView: TextView = binding.textDashboard
+        val textView: TextView = binding.skillTitle
         skillViewModel.text.observe(viewLifecycleOwner, Observer {
             textView.text = it
         })

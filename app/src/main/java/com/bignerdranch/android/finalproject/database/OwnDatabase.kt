@@ -8,5 +8,5 @@ import com.bignerdranch.android.finalproject.OwnFood
 @Database(entities = [OwnFood::class], version = 1)
 @TypeConverters(FoodTypeConverters::class)
 abstract class OwnDatabase  : RoomDatabase() {
-    abstract fun OwnDao(): FoodDao
+    abstract fun OwnDao(): OwnDao
 }

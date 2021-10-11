@@ -11,7 +11,7 @@ import java.util.*
 import java.util.concurrent.Executors
 
 
-private const val DATABASE_NAME = "food-database"
+private const val DATABASE_NAME = "ownrecipe-database"
 
 class OwnRecipeRepository private constructor(context: Context){
     private val database : OwnDatabase = Room.databaseBuilder(

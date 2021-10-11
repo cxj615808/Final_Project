@@ -8,6 +8,8 @@ import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import com.bignerdranch.android.finalproject.databinding.ActivityMainBinding
+import com.bignerdranch.android.finalproject.ui.Favorite.FavoriteRepository
+import com.bignerdranch.android.finalproject.ui.OwnRecipe.OwnRecipeRepository
 
 class MainActivity : AppCompatActivity() {
 
